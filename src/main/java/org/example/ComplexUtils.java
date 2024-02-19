@@ -34,12 +34,16 @@ public class ComplexUtils {
 
         Complex complex = new Complex(0, 0);
 
-        int cube = (int)(Math.pow(second.getX(), 2) + Math.pow(second.getY(), 2));
+        try {
+            int cube = (int)(Math.pow(second.getX(), 2) + Math.pow(second.getY(), 2));
 
-        complex.setX((first.getX() * second.getX() + first.getY() * second.getY()) / cube);
-        complex.setY((first.getY() * second.getX() - first.getX() * second.getY()) / cube);
-
-        return complex;
+            complex.setX((first.getX() * second.getX() + first.getY() * second.getY()) / cube);
+            complex.setY((first.getY() * second.getX() - first.getX() * second.getY()) / cube);
+            return complex;
+        } catch (Exception e) {
+            System.out.println("Ошибка: " + e.getMessage());
+            return null;
+        }
     }
 
     public double module(Complex complex)
