@@ -3,7 +3,7 @@ package org.example;
 public class Complex {
     double X, Y;
 
-    public Complex(int x, int y) {
+    public Complex(double x, double y) {
         X = x;
         Y = y;
     }
